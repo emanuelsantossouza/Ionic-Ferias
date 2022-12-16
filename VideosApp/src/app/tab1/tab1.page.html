@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="">
+  <ion-toolbar color="dark">
     <ion-title>
       Videos App
     </ion-title>
@@ -10,23 +10,116 @@
   <ion-searchbar placeholder="Buscar" autocomplete="honorific-prefix"></ion-searchbar>
 
   <ion-list>
-    <ion-item lines="full">
-      <ion-thumbnail slot="start">
-        <img alt="Capa do filme Avata: O caminho da água"
-          src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/tnmdUnztAYbfJ0jhjpN6oxwP2sb.jpg" />
-      </ion-thumbnail>
-      <ion-label class="ion-text-wrap">
-        <div>
-          <h1>Avatar: O Caminho da Água (2022)</h1>
-          <p>15/12/2022 (BR) - 3h 12m</p>
-          <p> Ficção científica, Ação, Aventura</p>
-        </div>
-      </ion-label>
+    <!-- Filme 1-->
+    <ion-item-sliding>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Capa do filme Avata: O caminho da água"
+            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/tnmdUnztAYbfJ0jhjpN6oxwP2sb.jpg" />
+        </ion-thumbnail>
 
-      <ion-chip color="success" outline>
-        <ion-label>83%</ion-label>
-      </ion-chip>
-    </ion-item>
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>Avatar: O Caminho da Água (2022)</h1>
+            <p>15/12/2022 (BR) - 3h 12m</p>
+            <p> Ficção científica, Ação, Aventura</p>
+          </div>
+        </ion-label>
 
+        <ion-chip color="success" outline>
+          <ion-label>83%</ion-label>
+        </ion-chip>
+      </ion-item>
 
- </ion-list>
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- Filme 2-->
+    <ion-item-sliding>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Capa do filme Avata: O caminho da água"
+            src="https://www.themoviedb.org/t/p/w220_and_h330_face/ooBR3qulC40ws0QkYBUAYFKmLRE.jpg" />
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>Wandinha (2022)</h1>
+            <p>Temporada 1 | 8 episódios</p>
+            <p> Sci-Fi & Fantasy, Mistério, Comédia</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>88%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- Filme 3-->
+    <ion-item-sliding>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Capa do filme Avata: O caminho da água"
+            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/6tb0qiqLN9szHPA4i0kY38oaWew.jpg" />
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>Pantera Negra: Wakanda para Sempre (2022)</h1>
+            <p>10/11/2022 (BR) - 2h 42m</p>
+            <p>Ação, Aventura, Ficção científica</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>75%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+    <!-- Filme 4-->
+    <ion-item-sliding>
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img alt="Capa do filme Avata: O caminho da água"
+            src="https://www.themoviedb.org/t/p/w300_and_h450_bestv2/jTrXwK56EoLHHxfBkpwGdfmy2uh.jpg" />
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>Top Gun: Maverick (2022)</h1>
+            <p>26/05/2022 (BR) - 2h 11m</p>
+            <p>Ação, Drama</p>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>83%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option>
+          <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
