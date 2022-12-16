@@ -1,6 +1,10 @@
 ion-item{
+  --padding-start: 10px;
+  --inner-padding-end: 10px;
+
   ion-thumbnail {
     height: 100%;
+    margin-inline-end: 10px;
   }
 
   h1 {
@@ -18,5 +22,6 @@ ion-item{
 
   ion-chip{
       padding-inline: 3px;
+
   }
 }
