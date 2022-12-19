@@ -1,5 +1,11 @@
 # Anotações das aulas
 
+## NODE.JS
+#### Comandos mais utilizados 
+![image](https://user-images.githubusercontent.com/99850729/208549475-8900f225-d2b9-4f50-a013-94ec3f3d51c7.png)
+
+
+
 ## SCSS - Ionic 
 
 #### O SCSS do ionic, pode ser trabalhado varias alterações e mudanças, tanto utilizando as estilizações do ionic como do proprio css puro.
