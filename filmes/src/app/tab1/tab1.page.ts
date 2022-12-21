@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { DadosService } from './../services/dados.service';
 import { IFilme } from './../models/IFilme.models';
 import { Component } from '@angular/core';
 import { ToastController } from '@ionic/angular';
@@ -53,7 +55,16 @@ export class Tab1Page {
 
   ];
 
-  constructor(private alertController: AlertController, private toastController: ToastController) { }
+  constructor(
+    private alertController: AlertController,
+    private toastController: ToastController,
+    public dadosService: DadosService,
+    public route: Router) { }
+
+  exbirFilme(filme: IFilme) {
+    this.dadosService.guardaDados('filme', filme);
+    this.route.navigateByUrl('/dados-filme');
+    }
 
   async exibirAlertaFavorito() {
     const alert = await this.alertController.create({

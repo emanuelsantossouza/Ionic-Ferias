@@ -12,7 +12,7 @@
 
     <!-- Filme 1-->
     <ion-item-sliding *ngFor="let filme of listaFilmes">
-      <ion-item [routerLink]='filme.pagina'>
+      <ion-item lines="full" (click)="exbirFilme(filme)">
         <ion-thumbnail slot="start">
           <img alt="Capa do filme Avata: O caminho da água" [src]="filme.cartaz" />
         </ion-thumbnail>

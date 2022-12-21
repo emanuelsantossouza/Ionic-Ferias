@@ -21,6 +21,10 @@ const routes: Routes = [
   {
     path: 'top-gun',
     loadChildren: () => import('./filmes/top-gun/top-gun.module').then( m => m.TopGunPageModule)
+  },
+  {
+    path: 'dados-filme',
+    loadChildren: () => import('./dados-filme/dados-filme.module').then( m => m.DadosFilmePageModule)
   }
 ];
 @NgModule({
