@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="dark">
+    <ion-title>
+      {{ titulo}}
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" color="pedi">
+  <ion-searchbar placeholder="Buscar"></ion-searchbar>
+  <ion-list>
+
+    <!-- Filme 1-->
+    <ion-item-sliding *ngFor="let filme of listaFilmes">
+      <ion-item [routerLink]='filme.pagina'>
+        <ion-thumbnail slot="start">
+          <img alt="Capa do filme Avata: O caminho da água" [src]="filme.cartaz" />
+        </ion-thumbnail>
+
+        <ion-label class="ion-text-wrap">
+          <div>
+            <h1>{{filme.nome}}</h1>
+            <p>{{filme.lancamente}} - {{filme.duracao}}</p>
+            <ion-badge color="liight" *ngFor="let genero of filme.genero">{{genero}}</ion-badge>
+          </div>
+        </ion-label>
+
+        <ion-chip color="success" outline>
+          <ion-label>{{filme.classificacao}}%</ion-label>
+        </ion-chip>
+      </ion-item>
+
+      <ion-item-options side="end">
+        <ion-item-option (click)="exibirAlertaFavorito()">
+          <ion-icon slot="icon-only" name="star-outline"></ion-icon>
+        </ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+
+  </ion-list>
+</ion-content>
