@@ -14,7 +14,7 @@ export class FilmeService {
   regiao = 'BR';
 
   private apiURL = 'https://api.themoviedb.org/3/';
-  private Key = 'api_key=3a1be762cd00f764c58adac9955a6e56';
+  private Key = '?api_key=3a1be762cd00f764c58adac9955a6e56';
 
   constructor(
     private http: HttpClient,

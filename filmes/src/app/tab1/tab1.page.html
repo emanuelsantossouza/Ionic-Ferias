@@ -8,25 +8,34 @@
 
 <ion-content [fullscreen]="true" color="pedi">
   <ion-searchbar (ionChange)="buscarFilmes($event)" placeholder="Buscar"></ion-searchbar>
-  <ion-list>
 
-    <!-- Filme 1-->
-    <ion-item-sliding *ngFor="let filme of listaFilmes">
+  <ion-list *ngIf="listaMovies">
+
+    <ion-item lines="none" *ngIf="listaMovies.results.length === 0">
+      <ion-label class="ion-text-center">
+        Não há filmes para exibir...
+      </ion-label>
+    </ion-item>
+
+    <ion-item-sliding *ngFor="let filme of listaMovies?.results">
       <ion-item lines="full" (click)="exbirFilme(filme)">
         <ion-thumbnail slot="start">
-          <img alt="Capa do filme Avata: O caminho da água" [src]="filme.cartaz" />
+          <img *ngIf="filme.poster_path"
+           src="https://www.themoviedb.org/t/p/w500/{{filme.poster_path}}" />
+
+          <ion-icon *ngIf="!filme.poster_path" name="videocam-off"></ion-icon>
         </ion-thumbnail>
 
         <ion-label class="ion-text-wrap">
           <div>
-            <h1>{{filme.nome}}</h1>
-            <p>{{filme.lancamente}} - {{filme.duracao}}</p>
-            <ion-badge color="liight" *ngFor="let genero of filme.genero">{{genero}}</ion-badge>
+            <h1>{{filme.title}}</h1>
+            <p>{{filme.release_date}}</p>
+            <ion-badge color="liight" *ngFor="let genero of filme.genre_ids">{{genero}}</ion-badge>
           </div>
         </ion-label>
 
-        <ion-chip color="success" outline>
-          <ion-label>{{filme.classificacao}}%</ion-label>
+        <ion-chip [color]="filme.vote_average < 5 ? 'danger' : ((filme.vote_average < 7) ? 'warning' : 'success')" outline>
+          <ion-label>{{filme.vote_average}}</ion-label>
         </ion-chip>
       </ion-item>
 

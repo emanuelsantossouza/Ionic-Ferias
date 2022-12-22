@@ -1,3 +1,4 @@
+import { IFilmeApi, IListaFilme } from './../models/IFilmeApi.models';
 import { FilmeService } from './../services/filme.service';
 import { Router } from '@angular/router';
 import { DadosService } from './../services/dados.service';
@@ -56,22 +57,30 @@ export class Tab1Page {
 
   ];
 
+  listaMovies: IListaFilme | undefined;
 
   constructor(
     private alertController: AlertController,
     private toastController: ToastController,
     public dadosService: DadosService,
-    public filmeService:FilmeService,
+    public filmeService: FilmeService,
     public route: Router) { }
 
   buscarFilmes(evento: any) {
     console.log(evento.target.value);
+    const busca = evento.target.value;
+    if (busca && busca.trim() !== '') {
+      this.filmeService.buscarFilmes(busca).subscribe(dados => {
+        console.log(dados);
+        this.listaMovies = dados;
+      });
+    }
   }
 
-  exbirFilme(filme: IFilme) {
+  exbirFilme(filme: IFilmeApi) {
     this.dadosService.guardaDados('filme', filme);
     this.route.navigateByUrl('/dados-filme');
-    }
+  }
 
   async exibirAlertaFavorito() {
     const alert = await this.alertController.create({
