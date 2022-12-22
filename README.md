@@ -33,10 +33,21 @@
 #### Crie o serviço com o cmd 
 ![image](https://user-images.githubusercontent.com/99850729/209039099-28ef7bac-5f14-4268-bd0f-ff8b139720a7.png)
 
+
+
+
+
+
 depois no VS Code, crie os metodos no serviço criado antes 
 ![image](https://user-images.githubusercontent.com/99850729/209039338-b129d14a-6d1b-48ce-8c33-35005a1ed610.png)
 
 #### depois no crie uma pagina para utilizar os metodos criados e estilizar e receber os dados
 
 ![image](https://user-images.githubusercontent.com/99850729/209039487-108bda78-f211-42a3-8179-4a2d989ca39a.png)
+
+
+
+### Podemos usar IF ternario dentro do html do ionic 
+#### apenas colocar o atributo entre [] 'exemplo o color' e passar a programação
+![image](https://user-images.githubusercontent.com/99850729/209188153-72dc4e9e-c03e-42fa-8be8-1e9f53e8ffab.png)
 
