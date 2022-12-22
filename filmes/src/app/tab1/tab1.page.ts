@@ -1,3 +1,4 @@
+import { FilmeService } from './../services/filme.service';
 import { Router } from '@angular/router';
 import { DadosService } from './../services/dados.service';
 import { IFilme } from './../models/IFilme.models';
@@ -12,7 +13,7 @@ import { AlertController } from '@ionic/angular';
 })
 export class Tab1Page {
 
-  titulo = 'Filmes App';
+  titulo = 'Filmes ';
 
   listaFilmes: IFilme[] = [
     {
@@ -55,11 +56,17 @@ export class Tab1Page {
 
   ];
 
+
   constructor(
     private alertController: AlertController,
     private toastController: ToastController,
     public dadosService: DadosService,
+    public filmeService:FilmeService,
     public route: Router) { }
+
+  buscarFilmes(evento: any) {
+    console.log(evento.target.value);
+  }
 
   exbirFilme(filme: IFilme) {
     this.dadosService.guardaDados('filme', filme);
