@@ -1,21 +1,21 @@
 <ion-content [fullscreen]="true">
-<div class="center">
-  <ion-card color="dark">
+  <div class="center">
+    <ion-card color="dark">
       <img src="https://th.bing.com/th/id/OIP.nZ_ItuiscANpwGFcpspMvgHaHa?pid=ImgDet&rs=1" alt="">
       <ion-card-title class="ion-text-center">Movies Apps </ion-card-title>
+
       <ion-item lines="none" color="dark">
         <ion-label position="floating">E-mail:</ion-label>
         <ion-input type="email" [(ngModel)]="email"></ion-input>
       </ion-item>
+
       <ion-item lines="none" color="dark">
         <ion-label position="floating">Senha:</ion-label>
         <ion-input type="password" [(ngModel)]="senha"></ion-input>
       </ion-item>
       <ion-button (click)="login()" expand="full" fill="outline" color="light">Entrar</ion-button>
-      <ion-button expand="full" fill="clear" color="light">Registrar</ion-button>
-  </ion-card>
-
-
-</div>
+      <ion-button routerLink="/cadastro" expand="full" fill="clear" color="light">Registrar</ion-button>
+    </ion-card>
+  </div>
 
 </ion-content>
