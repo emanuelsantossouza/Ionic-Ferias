@@ -51,3 +51,11 @@ depois no VS Code, crie os metodos no serviço criado antes
 #### apenas colocar o atributo entre [] 'exemplo o color' e passar a programação
 ![image](https://user-images.githubusercontent.com/99850729/209188153-72dc4e9e-c03e-42fa-8be8-1e9f53e8ffab.png)
 
+
+
+### Rotas 
+#### Como troca a primeira pagina? 
+#### Logo após criar a nova pagina, é preciso passar o caminho vazio para entra na página 
+
+![image](https://user-images.githubusercontent.com/99850729/209413870-46415d98-71c0-43e7-b632-e72b7e2e113f.png)
+
