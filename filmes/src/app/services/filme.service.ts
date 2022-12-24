@@ -21,22 +21,22 @@ export class FilmeService {
     private toastController: ToastController) { }
 
 
-  buscarFilmes(busca: string): Observable<IListaFilme>{
+  buscarFilmes(busca: string): Observable<IListaFilme> {
     const url = `${this.apiURL}search/movie${this.Key}&language=${this.lingua}&regian=${this.regiao}&query=${busca}`;
 
     return this.http.get<IListaFilme>(url)
   }
 
 
-  async exibirErro() {
-    const toast = await this.toastController.create({
-      message: 'Hello World!',
-      duration: 2000,
-      color: 'danger',
-      position: 'middle',
-    });
+  async exibirErro(erdro: any){
+  const toast = await this.toastController.create({
+    message: 'Hello World!',
+    duration: 2000,
+    color: 'danger',
+    position: 'middle',
+  });
 
-     toast.present();
-    return null;
-  }
+  toast.present();
+  return null;
+}
 }

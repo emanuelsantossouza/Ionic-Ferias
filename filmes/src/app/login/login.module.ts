@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { WandinhaPageRoutingModule } from './wandinha-routing.module';
+import { LoginPageRoutingModule } from './login-routing.module';
 
-import { WandinhaPage } from './wandinha.page';
+import { LoginPage } from './login.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    WandinhaPageRoutingModule
+    LoginPageRoutingModule
   ],
-  declarations: [WandinhaPage]
+  declarations: [LoginPage]
 })
-export class WandinhaPageModule {}
+export class LoginPageModule {}
