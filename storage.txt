@@ -1,0 +1,34 @@
+Configuração do storage
+1- Entrar na pagina do ionic, ir na seção GUIDE.
+
+2- Navegar até a seção do ANGULAR.
+
+3- Dentro do angular, procurar Storage, click.
+
+
+Dentro da Pagina Guide/Angular
+
+4- Dentro do Storage, ir na segunda opção '@ionic/storage', depois clicar na @ionic/storage, essa link vai te levar para o repositorio.
+
+
+----Instalação do Storage-----
+	Execute o os seguintes codigos
+1- npm install @ionic/storage
+
+2- npm install @ionic/storage-angular
+
+--Colar no codigo-----
+Na pagina src/app/app.module.ts voce vai declara o import
+
+@NgModule({
+  //...
+  imports: [
+   IonicStorageModule.forRoot({
+     name: '__mydb',
+     driverOrder: [Drivers.IndexedDB, Drivers.LocalStorage]
+   })
+ ],
+ //...
+})
+export class AppModule { }
+
