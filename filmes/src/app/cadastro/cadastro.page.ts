@@ -1,6 +1,8 @@
-import { CpfValidator } from './../validators/cpf-validators';
+import { Usuario } from './../models/Usuario';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { StorageService } from '../services/storage.service';
 
 
 @Component({
@@ -11,21 +13,63 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class CadastroPage implements OnInit {
 
   formCadastro: FormGroup;
+  usuario: Usuario = new Usuario();
 
-  constructor(private formBuilder: FormBuilder) {
+  mensagens = {
+    nome: [
+      { tipo: 'required', mensagens: 'Digite um nome, Por favor!!' },
+      { tipo: 'minlength', mensagens: 'No mínimo 3 dígitos, Por favor!! ' },
+    ],
+    email: [
+      { tipo: 'required', mensagens: 'Digite um e-mail, Por favor!' },
+      { tipo: 'email', mensagens: 'Tem que ser um e-mail!!' },
+      { tipo: 'minlength', mensagens: 'No mínimo 6 dígitos!!' },
+    ],
+    telefone: [
+      { tipo: 'required', mensagens: 'Digite um CPF, Por favor!' },
+    ],
+    senha: [
+      { tipo: 'required', mensagens: 'Digite uma senha, Por favor!' },
+      { tipo: 'minlength', mensagens: 'No mínimo 8 dígitos!' },
+    ],
+    confirmaSenha: [
+      { tipo: 'required', mensagens: 'Confirme a senha!' },
+      { tipo: 'minlength', mensagens: 'No mínimo 8 dígitos!' },
+      { tipo: 'maxlength', mensagens: 'No mínimo 8 caracteres!' },
+      { tipo: 'comparacao', mensagens: 'Deve ser igual a Senha!' },
+    ],
+  };
+
+  constructor(private formBuilder: FormBuilder, private storageService: StorageService, private router: Router) {
+
     this.formCadastro = this.formBuilder.group({
-        nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
-        email: ['', Validators.compose([Validators.required, Validators.email])],
-        telefone: ['', Validators.compose([Validators.required, Validators.minLength(10)])],
-        senha: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
-        confirmaSenha: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
-    });
+      nome: ['', Validators.compose([Validators.required, Validators.minLength(3)])],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      telefone: ['', Validators.required],
+      senha: ['', Validators.compose([Validators.required, Validators.minLength(6)])],
+      confirmaSenha: ['', Validators.compose([Validators.required, Validators.minLength(6)])]
+    }, {
+
+    }
+    );
   }
 
   ngOnInit() {
   }
 
-  salvarCadastro() {
-    console.log('Formulario: ', this.formCadastro.valid);
+  async salvarCadastro() {
+    if (this.formCadastro.valid) {
+      this.usuario.nome = this.formCadastro.value.nome;
+      this.usuario.email = this.formCadastro.value.email;
+      this.usuario.telefone = this.formCadastro.value.telefone;
+      this.usuario.senha = this.formCadastro.value.senha;
+      this.storageService.set(this.usuario.telefone, this.usuario);
+      this.router.navigateByUrl('/tabs1');
+      alert('Cadastro bem sucedido');
+      console.log('Cadastro bem sucedido!');
+    } else {
+      alert('Campos Invalidos');
+    }
   }
 }
+

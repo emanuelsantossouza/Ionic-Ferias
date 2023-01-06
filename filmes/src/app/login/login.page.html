@@ -6,14 +6,15 @@
 
       <ion-item lines="none" color="dark">
         <ion-label position="floating">E-mail:</ion-label>
-        <ion-input type="email" [(ngModel)]="email"></ion-input>
+        <ion-input type="email"></ion-input>
       </ion-item>
 
       <ion-item lines="none" color="dark">
         <ion-label position="floating">Senha:</ion-label>
-        <ion-input type="password" [(ngModel)]="senha"></ion-input>
+        <ion-input type="password"></ion-input>
       </ion-item>
-      <ion-button (click)="login()" expand="full" fill="outline" color="light">Entrar</ion-button>
+
+      <ion-button  expand="full" fill="outline" color="light">Entrar</ion-button>
       <ion-button routerLink="/cadastro" expand="full" fill="clear" color="light">Registrar</ion-button>
     </ion-card>
   </div>

@@ -9,33 +9,65 @@
 
 
   <ion-item color="dark">
-    <img src="http://st.depositphotos.com/1900347/4146/i/450/depositphotos_41466555-Image-of-slice-of-pizza.jpg">
+    <img src="https://www.showmetech.com.br/wp-content/uploads//2022/01/image-56-1-1920x1024.png">
   </ion-item>
+
 
   <form [formGroup]="formCadastro">
     <ion-item color="dark">
       <ion-label position="stacked">Nome:</ion-label>
       <ion-input formControlName="nome"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.nome">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('nome')?.hasError(erro.tipo) && (formCadastro.get('nome')?.dirty || formCadastro.get('nome')?.touched)">
+          {{erro.mensagens}}
+        </span>
+      </ng-container>
     </ion-item>
 
     <ion-item color="dark">
-      <ion-label position="stacked">E-mail</ion-label>
-      <ion-input type="email" formControlName="email"></ion-input>
+      <ion-label position="stacked">Email:</ion-label>
+      <ion-input formControlName="email"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.email">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('email')?.hasError(erro.tipo) && (formCadastro.get('email')?.dirty || formCadastro.get('email')?.touched)">
+          {{erro.mensagens}}
+        </span>
+      </ng-container>
     </ion-item>
 
+
     <ion-item color="dark">
-      <ion-label position="stacked">Telefone</ion-label>
+      <ion-label position="stacked">Telefone:</ion-label>
       <ion-input formControlName="telefone"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.telefone">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('telefone')?.hasError(erro.tipo) && (formCadastro.get('telefone')?.dirty || formCadastro.get('telefone')?.touched)">
+          {{erro.mensagens}}
+        </span>
+      </ng-container>
     </ion-item>
 
     <ion-item color="dark">
-      <ion-label position="stacked">Senha</ion-label>
+      <ion-label position="stacked">Senha:</ion-label>
       <ion-input type="password" formControlName="senha"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.senha">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('senha')?.hasError(erro.tipo) && (formCadastro.get('senha')?.dirty || formCadastro.get('senha')?.touched)">
+          {{erro.mensagens}}
+        </span>
+      </ng-container>
     </ion-item>
 
     <ion-item color="dark">
-      <ion-label position="stacked">Confirmar senha</ion-label>
+      <ion-label position="stacked">Confirmar senha:</ion-label>
       <ion-input type="password" formControlName="confirmaSenha"></ion-input>
+      <ng-container *ngFor="let erro of mensagens.confirmaSenha">
+        <span class="msg-erro"
+          *ngIf="formCadastro.get('confirmaSenha')?.hasError(erro.tipo) && (formCadastro.get('confirmaSenha')?.dirty || formCadastro.get('confirmaSenha')?.touched)">
+          {{erro.mensagens}}
+        </span>
+      </ng-container>
     </ion-item>
 
     <ion-row>
@@ -52,4 +84,5 @@
     <ion-button type="submit" expand="block" color="danger" (click)="salvarCadastro()">Salvar</ion-button>
 
   </form>
+
 </ion-content>
